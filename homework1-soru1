@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<Windows.h>
+
+
+void main()
+{
+char KullanıcıAdı[30],sifre[10]; //harf ve sayıyı aynı anda girebilirsiniz
+int cevap;
+int eklenen,çekilen,gönderilen;
+float hesapNo;
+int paraMik=3500;
+
+printf("\t\tBANKA HESAP SISTEMI\n");
+printf("Kullanici Adiniz:");
+scanf("%s",KullanıcıAdı);
+printf("Sifreniz:");
+scanf("%s",sifre);
+while(1)  //cıkış yapıncaya kadar sonsuz döngüye girmesini sağlar
+{
+printf("\t\tMENU\n");
+printf("1==>Bankadaki Para Miktari\n");
+printf("2==>Bankaya Para Ekleme\n");
+printf("3==>Bankadan Para Cekme\n");
+printf("4==>Baska Hesaba Para Gonderme\n");
+printf("5==>Cikis\n");
+printf("Islem Seciniz:");
+scanf("%d",&cevap);
+
+if(cevap==1)
+
+	printf("Bankadaki Para Miktariniz:%d TL",paraMik);
+else if(cevap==2)
+{
+	printf("Hesabiniza Ne Kadar Para Eklemek Istiyorsunuz:");
+	scanf("%d",&eklenen);
+	paraMik=paraMik+eklenen;
+	printf("Isleminiz Tamamlandi...Toplam Paraniz:%d\n",paraMik);
+}
+else if(cevap==3)
+{
+	printf("Hesabinizdan Ne Kadar Para Cekmek Istiyorsunuz:");
+	scanf("%d",&çekilen);
+	if(çekilen>paraMik)  //hesabınızdaki paradan daha fazla para çekmemenizi sağlar
+		printf("Hesabinizda Yeterli Para Bulunmamaktadir\n");
+	else
+{
+	    paraMik=paraMik-çekilen;
+		printf("Isleminiz tamamlandi...Kalan Paraniz:%d TL\n",paraMik);
+}
+}
+else if(cevap==4)
+{
+	printf("Gondermek Istediginiz Hesap Numarasini Giriniz:"); 
+	scanf("%f",&hesapNo);
+	printf("\nNe Kadar Para Gondermek istiyorsunuz?:");
+	scanf("%d",&gönderilen);
+	if(gönderilen>paraMik) //hesabınızda bulunan paradan fazla para gönderemezsiniz
+		printf("Hesabinizda Yeterli Para Bulunmamaktadir\n");
+	else
+	{
+		paraMik=paraMik-gönderilen;
+		printf("Isleminiz tamamlandi...Kalan Paraniz:%d TL\n",paraMik);
+	}
+}
+else if (cevap==5)
+{
+	printf("Iyi gunler!!!\n");
+	break; //beş sayısına bastığınızda sonsuz döngü sonlanır
+}
+else
+	printf("1,2,3,4,5 sayilarindan birini giriniz");
+	
+printf("\n");
+Sleep(2000);   //işlem ekranda bi süre bekler
+system("CLS"); //işlem yapıldıktan sonra ekranı temizler
+}
+}
