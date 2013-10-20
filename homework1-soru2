@@ -1,11 +1,27 @@
 #include<stdio.h>
+#include<conio.h>
 void main()
 {
-	char sayi[5];
+	char sayi[10];
+	char cevap;
+	do // devam etme döngüsü
+	{
 	printf("Cozumlemek istediginiz sayiyi giriniz:");
 	scanf("%s",sayi);
-	printf("%c tane binlik sayi\n",sayi[0]);
-	printf("%c tane yuzluk sayi\n",sayi[1]);
-	printf("%c tane onluk sayi\n",sayi[2]);
-	printf("%c tane birlik sayi vardir\n",sayi[3]);
+	
+	if(sayi[4]==NULL) //dört basamaklı olduğunu kontrol eder
+	{
+		printf("%c tane binlik sayi\n",sayi[0]);
+		printf("%c tane yuzluk sayi\n",sayi[1]);
+		printf("%c tane onluk sayi\n",sayi[2]);
+		printf("%c tane birlik sayi vardir\n",sayi[3]);
+	}
+	else
+		printf("Dort basamakli bir sayi giriniz!!\n");
+	printf("Devam etmek istiyor musunuz?(e/h):"); //devam etmek isterseniz e ye basmalısınız
+	cevap=getche();
+	printf("\n");
+	}
+	while(cevap=='e');
+	
 }
