@@ -4,7 +4,7 @@
 
 void main()
 {
-char KullanıcıAdı[30],sifre[10]; //harf ve sayıyı aynı anda girebilirsiniz
+char KullanıcıAdı[30],sifre[20],sifreKontrol[20]; //harf ve sayıyı aynı anda girebilirsiniz
 int cevap;
 int eklenen,çekilen,gönderilen;
 float hesapNo;
@@ -38,6 +38,7 @@ else if(cevap==2)
 }
 else if(cevap==3)
 {
+	
 	printf("Hesabinizdan Ne Kadar Para Cekmek Istiyorsunuz:");
 	scanf("%d",&çekilen);
 	if(çekilen>paraMik)  //hesabınızdaki paradan daha fazla para çekmemenizi sağlar
@@ -47,7 +48,9 @@ else if(cevap==3)
 	    paraMik=paraMik-çekilen;
 		printf("Isleminiz tamamlandi...Kalan Paraniz:%d TL\n",paraMik);
 }
-}
+	}
+	
+
 else if(cevap==4)
 {
 	printf("Gondermek Istediginiz Hesap Numarasini Giriniz:"); 
@@ -71,7 +74,7 @@ else
 	printf("1,2,3,4,5 sayilarindan birini giriniz");
 	
 printf("\n");
-Sleep(2000);   //işlem ekranda bi süre bekler
+Sleep(1700); //ekran silinmeden bi süre bekler
 system("CLS"); //işlem yapıldıktan sonra ekranı temizler
 }
 }
