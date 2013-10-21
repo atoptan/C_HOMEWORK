@@ -38,7 +38,13 @@ else if(cevap==2)
 }
 else if(cevap==3)
 {
+	printf("Sifrenizi Onaylayiniz!!\n");
+	printf("sifre:");
+	scanf("%s",sifreKontrol);
 	
+	if(strcmp(sifreKontrol,sifre)==0)
+	{
+	printf("Sifreniz Onaylandi\n");	
 	printf("Hesabinizdan Ne Kadar Para Cekmek Istiyorsunuz:");
 	scanf("%d",&çekilen);
 	if(çekilen>paraMik)  //hesabınızdaki paradan daha fazla para çekmemenizi sağlar
@@ -49,10 +55,21 @@ else if(cevap==3)
 		printf("Isleminiz tamamlandi...Kalan Paraniz:%d TL\n",paraMik);
 }
 	}
+	else
+		printf("yanlis sifre girdiniz");
+}
+
 	
 
 else if(cevap==4)
 {
+	printf("Sifrenizi Onaylayiniz!!\n");
+	printf("sifre:");
+	scanf("%s",sifreKontrol);
+	
+	if(strcmp(sifreKontrol,sifre)==0)
+	{
+	printf("Sifreniz Onaylandi\n");	
 	printf("Gondermek Istediginiz Hesap Numarasini Giriniz:"); 
 	scanf("%f",&hesapNo);
 	printf("\nNe Kadar Para Gondermek istiyorsunuz?:");
@@ -64,6 +81,9 @@ else if(cevap==4)
 		paraMik=paraMik-gönderilen;
 		printf("Isleminiz tamamlandi...Kalan Paraniz:%d TL\n",paraMik);
 	}
+	}
+	else
+		printf("Yanlis sifre girdiniz");
 }
 else if (cevap==5)
 {
