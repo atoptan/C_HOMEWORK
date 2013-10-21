@@ -42,7 +42,7 @@ else if(cevap==3)
 	printf("sifre:");
 	scanf("%s",sifreKontrol);
 	
-	if(strcmp(sifreKontrol,sifre)==0)
+	if(strcmp(sifreKontrol,sifre)==0) //iki diziyi karşılaştırır
 	{
 	printf("Sifreniz Onaylandi\n");	
 	printf("Hesabinizdan Ne Kadar Para Cekmek Istiyorsunuz:");
@@ -67,7 +67,7 @@ else if(cevap==4)
 	printf("sifre:");
 	scanf("%s",sifreKontrol);
 	
-	if(strcmp(sifreKontrol,sifre)==0)
+	if(strcmp(sifreKontrol,sifre)==0) //iki diziyi karşılaştırır
 	{
 	printf("Sifreniz Onaylandi\n");	
 	printf("Gondermek Istediginiz Hesap Numarasini Giriniz:"); 
